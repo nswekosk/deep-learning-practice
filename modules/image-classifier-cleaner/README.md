@@ -5,6 +5,24 @@ highest-loss images from a fastai image classifier. It displays images in static
 paginated groups and uses stable review IDs to record files that should be
 quarantined or moved to another class folder.
 
+## Why I built this
+
+fastai provides `ClassificationInterpretation` for identifying images that a
+model finds difficult to classify. These high-loss examples can then be reviewed
+and removed from, or relabeled within, the training data.
+
+I initially ran into a bug with fastai's widget-based image cleaner. Running the
+notebook in JupyterLab on Paperspace appeared to fix it, based on the advice in
+this [fast.ai forum thread](https://forums.fast.ai/t/lesson-2-imageclassifiercleaner-error-displaying-widget/109371).
+However, JupyterLab repeatedly lost its connection, so the workflow remained
+unreliable. The experience suggested that fastai's widget-based cleaning tools
+could still use some attention across notebook environments.
+
+As a result, I built this widget-free module to review and clean both my training
+and validation data. It uses `ClassificationInterpretation` to find high-loss
+images, presents them in static pages, and applies deletion or relabeling
+decisions through ordinary Python collections and filesystem operations.
+
 ## Requirements
 
 - Python 3.10+
