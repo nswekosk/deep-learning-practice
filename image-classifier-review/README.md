@@ -29,8 +29,8 @@ decisions through ordinary Python collections and filesystem operations.
 - A trained fastai `Learner`
 - A folder-labeled image dataset
 
-The module must be importable from the current Python environment. For example,
-run a notebook from this directory or add `modules` to `PYTHONPATH`.
+The module must be importable from the current Python environment. In this
+repository, add the sibling `modules` directory to `PYTHONPATH`.
 
 ## Usage
 
